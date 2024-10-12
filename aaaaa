@@ -1,0 +1,105 @@
+USE concessionaria_auto_prime;
+
+SHOW TABLES;
+
+SELECT * FROM financiamentos;
+
+SELECT veiculos.modelo, estoque.quantidade FROM veiculos
+JOIN estoque ON estoque.veiculos_id = veiculos.id
+;
+
+
+DESC modelo;
+
+
+
+
+INSERT INTO galpao (unidade)
+VALUES ('Asa Norte');
+
+DELIMITER //
+CREATE FUNCTION calc_imposto (valor_total DECIMAL(10,2)) RETURNS DECIMAL(10,2)
+deterministic
+BEGIN
+	
+    DECLARE calc DECIMAL(10,2);
+    SET calc = valor_total * 1.3;
+    RETURN calc;
+END//
+DELIMITER ;
+
+
+
+
+select calc_impostos(select valor from veiculos where id = (select veiculos_id from vendas where id = 3));
+
+select valor from veiculos where id = (select veiculos_id from vendas where id = 3);
+
+join veiculos ON veiculos.id = vendas.veiculos_id
+where vendas.id = 3;
+
+select vendas from veiculos where id = 1;
+
+INSERT INTO financiamentos (valor_total, situacao_id, vendas_id)
+VALUES (calc_imposto(set valor from veiculos where id = ()), 1, 1 ) ;
+
+
+
+select * from vendas;
+join veiculos on ;
+where id = 51
+
+select * from funcionarios;
+desc vendas;
+
+INSERT INTO vendas(qtd_vendas, veiculos_id, clientes_id, funcionarios_id) VALUES (1, 1, 1, 51);
+INSERT INTO vendas(qtd_vendas, veiculos_id, clientes_id, funcionarios_id) VALUES (1, 2, 2, 52);
+INSERT INTO vendas(qtd_vendas, veiculos_id, clientes_id, funcionarios_id) VALUES (1, 3, 3, 53);
+INSERT INTO vendas(qtd_vendas, veiculos_id, clientes_id, funcionarios_id) VALUES (1, 4, 4, 54);
+INSERT INTO vendas(qtd_vendas, veiculos_id, clientes_id, funcionarios_id) VALUES (1, 5, 5, 55);
+INSERT INTO vendas(qtd_vendas, veiculos_id, clientes_id, funcionarios_id) VALUES (1, 6, 6, 56);
+INSERT INTO vendas(qtd_vendas, veiculos_id, clientes_id, funcionarios_id) VALUES (1, 7, 7, 57);
+INSERT INTO vendas(qtd_vendas, veiculos_id, clientes_id, funcionarios_id) VALUES (1, 8, 8, 58);
+INSERT INTO vendas(qtd_vendas, veiculos_id, clientes_id, funcionarios_id) VALUES (1, 9, 9, 59);
+INSERT INTO vendas(qtd_vendas, veiculos_id, clientes_id, funcionarios_id) VALUES (1, 10, 10, 60);
+INSERT INTO vendas(qtd_vendas, veiculos_id, clientes_id, funcionarios_id) VALUES (1, 11, 11, 61);
+INSERT INTO vendas(qtd_vendas, veiculos_id, clientes_id, funcionarios_id) VALUES (1, 12, 12, 62);
+INSERT INTO vendas(qtd_vendas, veiculos_id, clientes_id, funcionarios_id) VALUES (1, 13, 13, 63);
+INSERT INTO vendas(qtd_vendas, veiculos_id, clientes_id, funcionarios_id) VALUES (1, 14, 14, 64);
+INSERT INTO vendas(qtd_vendas, veiculos_id, clientes_id, funcionarios_id) VALUES (1, 15, 15, 65);
+INSERT INTO vendas(qtd_vendas, veiculos_id, clientes_id, funcionarios_id) VALUES (1, 16, 16, 66);
+INSERT INTO vendas(qtd_vendas, veiculos_id, clientes_id, funcionarios_id) VALUES (1, 17, 17, 67);
+INSERT INTO vendas(qtd_vendas, veiculos_id, clientes_id, funcionarios_id) VALUES (1, 18, 18, 68);
+INSERT INTO vendas(qtd_vendas, veiculos_id, clientes_id, funcionarios_id) VALUES (1, 19, 19, 69);
+INSERT INTO vendas(qtd_vendas, veiculos_id, clientes_id, funcionarios_id) VALUES (1, 20, 20, 70);
+INSERT INTO vendas(qtd_vendas, veiculos_id, clientes_id, funcionarios_id) VALUES (1, 21, 21, 71);
+INSERT INTO vendas(qtd_vendas, veiculos_id, clientes_id, funcionarios_id) VALUES (1, 22, 22, 72);
+INSERT INTO vendas(qtd_vendas, veiculos_id, clientes_id, funcionarios_id) VALUES (1, 23, 23, 73);
+INSERT INTO vendas(qtd_vendas, veiculos_id, clientes_id, funcionarios_id) VALUES (1, 24, 24, 74);
+INSERT INTO vendas(qtd_vendas, veiculos_id, clientes_id, funcionarios_id) VALUES (1, 25, 25, 75);
+INSERT INTO vendas(qtd_vendas, veiculos_id, clientes_id, funcionarios_id) VALUES (1, 26, 26, 76);
+INSERT INTO vendas(qtd_vendas, veiculos_id, clientes_id, funcionarios_id) VALUES (1, 27, 27, 77);
+INSERT INTO vendas(qtd_vendas, veiculos_id, clientes_id, funcionarios_id) VALUES (1, 28, 28, 78);
+INSERT INTO vendas(qtd_vendas, veiculos_id, clientes_id, funcionarios_id) VALUES (1, 29, 29, 79);
+INSERT INTO vendas(qtd_vendas, veiculos_id, clientes_id, funcionarios_id) VALUES (1, 30, 30, 80);
+INSERT INTO vendas(qtd_vendas, veiculos_id, clientes_id, funcionarios_id) VALUES (1, 31, 31, 81);
+INSERT INTO vendas(qtd_vendas, veiculos_id, clientes_id, funcionarios_id) VALUES (1, 32, 32, 82);
+INSERT INTO vendas(qtd_vendas, veiculos_id, clientes_id, funcionarios_id) VALUES (1, 33, 33, 83);
+INSERT INTO vendas(qtd_vendas, veiculos_id, clientes_id, funcionarios_id) VALUES (1, 34, 34, 84);
+INSERT INTO vendas(qtd_vendas, veiculos_id, clientes_id, funcionarios_id) VALUES (1, 35, 35, 85);
+INSERT INTO vendas(qtd_vendas, veiculos_id, clientes_id, funcionarios_id) VALUES (1, 36, 36, 86);
+INSERT INTO vendas(qtd_vendas, veiculos_id, clientes_id, funcionarios_id) VALUES (1, 37, 37, 87);
+INSERT INTO vendas(qtd_vendas, veiculos_id, clientes_id, funcionarios_id) VALUES (1, 38, 38, 88);
+INSERT INTO vendas(qtd_vendas, veiculos_id, clientes_id, funcionarios_id) VALUES (1, 39, 39, 89);
+INSERT INTO vendas(qtd_vendas, veiculos_id, clientes_id, funcionarios_id) VALUES (1, 40, 40, 90);
+INSERT INTO vendas(qtd_vendas, veiculos_id, clientes_id, funcionarios_id) VALUES (1, 41, 41, 91);
+INSERT INTO vendas(qtd_vendas, veiculos_id, clientes_id, funcionarios_id) VALUES (1, 42, 42, 92);
+INSERT INTO vendas(qtd_vendas, veiculos_id, clientes_id, funcionarios_id) VALUES (1, 43, 43, 93);
+INSERT INTO vendas(qtd_vendas, veiculos_id, clientes_id, funcionarios_id) VALUES (1, 44, 44, 94);
+INSERT INTO vendas(qtd_vendas, veiculos_id, clientes_id, funcionarios_id) VALUES (1, 45, 45, 95);
+INSERT INTO vendas(qtd_vendas, veiculos_id, clientes_id, funcionarios_id) VALUES (1, 46, 46, 96);
+INSERT INTO vendas(qtd_vendas, veiculos_id, clientes_id, funcionarios_id) VALUES (1, 47, 47, 97);
+INSERT INTO vendas(qtd_vendas, veiculos_id, clientes_id, funcionarios_id) VALUES (1, 48, 48, 98);
+INSERT INTO vendas(qtd_vendas, veiculos_id, clientes_id, funcionarios_id) VALUES (1, 49, 49, 99);
+INSERT INTO vendas(qtd_vendas, veiculos_id, clientes_id, funcionarios_id) VALUES (1, 50, 50, 100);
+
